@@ -6,11 +6,18 @@ const gateway = {
   },
 };
 
+const path = require('path');
+const fs = require('fs');
+
 module.exports = {
   devServer: {
     watchOptions: { poll: 500 },
     proxy: gateway,
     port: 7777,
+    // https: {
+    //   key: fs.readFileSync(path.resolve(__dirname, 'YOURPRIVATE.key')),
+    //   cert: fs.readFileSync(path.resolve(__dirname, 'YOURPUBLIC.pem')),
+    // },
 
     overlay: {
       warnings: false,
